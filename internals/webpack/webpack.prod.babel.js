@@ -149,7 +149,7 @@ module.exports = require('./webpack.base.babel')({
     }),
 
     new VisualizerPlugin({
-      filename: '.reports/statistics.html',
+      filename: 'reports/statistics.html',
     }),
   ],
 
