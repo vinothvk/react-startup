@@ -7,7 +7,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
@@ -19,14 +18,7 @@ import {
   makeSelectLoading,
   makeSelectError,
 } from 'containers/App/selectors';
-import H2 from 'components/H2';
 import ReposList from 'components/ReposList';
-import AtPrefix from './AtPrefix';
-import CenteredSection from './CenteredSection';
-import Form from './Form';
-import Input from './Input';
-import Section from './Section';
-import messages from './messages';
 import { loadRepos } from '../App/actions';
 import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
@@ -62,25 +54,26 @@ export class HomePage extends React.PureComponent {
           />
         </Helmet>
         <div>
-          <CenteredSection>
-            <H2>
-              <FormattedMessage {...messages.startProjectHeader} />
-            </H2>
+          <section>
+            <h2>
+              <span>Start your next react project in seconds</span>
+            </h2>
             <p>
-              <FormattedMessage {...messages.startProjectMessage} />
+              <span>
+                A highly scalable, offline-first foundation with the best DX and
+                a focus on performance and best practices
+              </span>
             </p>
-          </CenteredSection>
-          <Section>
-            <H2>
-              <FormattedMessage {...messages.trymeHeader} />
-            </H2>
-            <Form onSubmit={this.props.onSubmitForm}>
+          </section>
+          <section>
+            <h2>
+              <span>Try me!</span>
+            </h2>
+            <form onSubmit={this.props.onSubmitForm}>
               <label htmlFor="username">
-                <FormattedMessage {...messages.trymeMessage} />
-                <AtPrefix>
-                  <FormattedMessage {...messages.trymeAtPrefix} />
-                </AtPrefix>
-                <Input
+                <span>Show Github repositories by</span>
+                <span>@</span>
+                <input
                   id="username"
                   type="text"
                   placeholder="mxstbr"
@@ -88,9 +81,9 @@ export class HomePage extends React.PureComponent {
                   onChange={this.props.onChangeUsername}
                 />
               </label>
-            </Form>
+            </form>
             <ReposList {...reposListProps} />
-          </Section>
+          </section>
         </div>
       </article>
     );

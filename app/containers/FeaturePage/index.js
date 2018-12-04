@@ -5,13 +5,6 @@
  */
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
-
-import H1 from 'components/H1';
-import messages from './messages';
-import List from './List';
-import ListItem from './ListItem';
-import ListItemTitle from './ListItemTitle';
 
 export default class FeaturePage extends React.Component {
   // Since state and props are static,
@@ -30,55 +23,77 @@ export default class FeaturePage extends React.Component {
             content="Feature page of React.js Boilerplate application"
           />
         </Helmet>
-        <H1>
-          <FormattedMessage {...messages.header} />
-        </H1>
-        <List>
-          <ListItem>
-            <ListItemTitle>
-              <FormattedMessage {...messages.scaffoldingHeader} />
-            </ListItemTitle>
+        <h1>
+          <span>Features</span>
+        </h1>
+        <ul>
+          <li>
             <p>
-              <FormattedMessage {...messages.scaffoldingMessage} />
+              <span>Quick scaffolding</span>
             </p>
-          </ListItem>
+            <p>
+              <span>
+                Automate the creation of components, containers, routes,
+                selectors and sagas - and their tests - right from the CLI!
+              </span>
+            </p>
+          </li>
 
-          <ListItem>
-            <ListItemTitle>
-              <FormattedMessage {...messages.feedbackHeader} />
-            </ListItemTitle>
+          <li>
             <p>
-              <FormattedMessage {...messages.feedbackMessage} />
+              <span>Instant feedback</span>
             </p>
-          </ListItem>
+            <p>
+              <span>
+                Enjoy the best DX and code your app at the speed of thought!
+                Your saved changes to the CSS and JS are reflected
+                instantaneously without refreshing the page. Preserve
+                application state even when you update something in the
+                underlying code!
+              </span>
+            </p>
+          </li>
 
-          <ListItem>
-            <ListItemTitle>
-              <FormattedMessage {...messages.routingHeader} />
-            </ListItemTitle>
+          <li>
             <p>
-              <FormattedMessage {...messages.routingMessage} />
+              <span>Industry-standard routing</span>
             </p>
-          </ListItem>
+            <p>
+              <span>
+                Write composable CSS thats co-located with your components for
+                complete modularity. Unique generated class names keep the
+                specificity low while eliminating style clashes. Ship only the
+                styles that are on the page for the best performance.
+              </span>
+            </p>
+          </li>
 
-          <ListItem>
-            <ListItemTitle>
-              <FormattedMessage {...messages.networkHeader} />
-            </ListItemTitle>
+          <li>
             <p>
-              <FormattedMessage {...messages.networkMessage} />
+              <span>Offline-first</span>
             </p>
-          </ListItem>
+            <p>
+              <span>
+                The next frontier in performant web apps: availability without a
+                network connection from the instant your users load the app.
+              </span>
+            </p>
+          </li>
 
-          <ListItem>
-            <ListItemTitle>
-              <FormattedMessage {...messages.intlHeader} />
-            </ListItemTitle>
+          <li>
             <p>
-              <FormattedMessage {...messages.intlMessage} />
+              <span>
+                Complete i18n Standard Internationalization and Pluralization
+              </span>
             </p>
-          </ListItem>
-        </List>
+            <p>
+              <span>
+                Scalable apps need to support multiple languages, easily add and
+                support multiple languages with `react-intl`.
+              </span>
+            </p>
+          </li>
+        </ul>
       </div>
     );
   }
